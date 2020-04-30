@@ -1,7 +1,7 @@
 html {
     margin: 0px;
     padding: 0px;
-    text-align: left;
+    text-align: center;
     font-family: sans-serif;
     width: 100vw;
 }
@@ -15,12 +15,19 @@ html {
     --text: #fff;
     /* --bg: #fff; */
     /* --text: #282828; */
+    /* --menu: #fff; */
 }
 
 html[data-theme='dark'] {
     --bg: #fff;
     --text: #282828;
 }
+
+html[data-theme='light'] {
+    --text: #fff;
+    --bg: #282828;
+}
+
 
 body {
     display: grid;
@@ -32,10 +39,9 @@ body {
 
 h1 {
     font-size: 59px;
-    margin: 20px 0 90px 5%;
-    /* font-family: 'Manrope', sans-serif; */
+    margin: 20px 0 90px 0;
+    text-align: left;
     font-family: 'Montserrat', sans-serif;
-    /* font-family: 'VT323', monospace; */
 }
 
 h2 {
@@ -47,7 +53,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.8srem;
+    font-size: 1.8rem;
 }
 
 p {
@@ -56,30 +62,6 @@ p {
     font-size: 1.1rem;
 }
 
-
-/* nav {
-    justify-self: end;
-}
-
-
-
-nav ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    padding: 0;
-    /* margin: 20px 40px; */
-/* } */
-
-/* 
-nav li {
-    padding-left: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--text);
-} */
 
 a {
     text-decoration: none;
@@ -104,7 +86,6 @@ button:hover,
 .submit-button:hover {
     background-color: var(--text);
     color: var(--bg);
-    /* border: 3px solid var(--color); */
 }
 
 
@@ -112,28 +93,31 @@ button:hover,
 .main-container {
     display: grid;
     justify-items: center;
+    padding: 0 8%;
 }
 
 /* Styling for hero  */
-span.am {
+button.am {
     height: 79px;
-    width: 105.767px;
+    width: 118px;
     background-color: var(--text);
     color: var(--bg);
     padding-right: 12px;
     padding-left: 12px;
-    /* transform: skewY(-17deg); */
     transform: rotate(-25deg);
     display: inline-block;
     position: relative;
     height: 82px;
     z-index: 98;
+    margin-top: 0;
+    outline: none;
 }
 
 span.am-text {
     display: inline-block;
-    /* transform: skewY(17deg); */
     transform: rotate(25deg);
+    font-size: 52px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -334,9 +318,7 @@ nav {
     align-items: center;
     min-height: 8vh;
     background-color: var(--menu);
-    /* padding-right: 40px; */
     width: 100%;
-    opacity: 0.8;
 }
 
 .logo {
@@ -351,14 +333,17 @@ nav {
     justify-content: flex-end;
     width: 100%;
     list-style: none;
-    /* padding-right: 40px; */
 }
 
 .browser-links a {
-    color: var(--text);
+    color: #fff;
     text-decoration: none;
     letter-spacing: 3px;
     font-size: 14px;
+}
+
+.browser-links a:hover {
+    color: var(--color);
 }
 
 .browser-links li {
@@ -367,142 +352,152 @@ nav {
 
 .nav-links {
     display: none;
-    /* display: flex;
-    justify-content: space-around;
-    width: 40%;
-    list-style: none; */
+
 }
 
 
 
 /* Media Queries */
-@media only screen and (min-width: 800px) {
-    .minimindful {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        max-width: 980px;
-    }
-
-    form {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        grid-template-areas:
-            "name      email"
-            "subject  subject"
-            "message  message"
-            ".        submit";
-
-    }
-}
-
-@media screen and (max-width:768px) {
-    .browser-links {
-        display: none;
-    }
-
-    .nav-links {
-        display: flex;
-        justify-content: space-around;
-        padding: 0;
-        list-style: none;
-        position: fixed;
-        /* position: absolute; */
-        right: 0;
-        height: 92vh;
-        top: 8vh;
-        background-color: var(--menu);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 50%;
-        transition: transform 0.5s ease-in;
-        margin: 0;
-        opacity: 0.8;
-
-    }
-
-    .nav-links a {
-        color: var(--text);
-        text-decoration: none;
-        letter-spacing: 3px;
-        font-size: 22px;
-        transition: color 0.2s, font-size 0.2s;
-    }
-
-    .nav-links a:hover {
-        color: var(--color);
-        font-size: 25px;
-    }
-
-
-    .burger {
-        display: none;
-    }
-
-    .burger div {
-        width: 25px;
-        height: 2px;
-        background-color: var(--text);
-        margin: 5px;
-        transition: all 0.35s ease;
-    }
-
-    .nav-links {
-
-        transform: translateX(100%);
-    }
-
-
-
-    .nav-active {
-        transform: translateX(0%);
-    }
-
-    @keyframes navLinkFade {
-        from {
-            opacity: 0;
-            transform: translateX(50px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateX(0px);
-        }
-    }
-
-    .toggle .line1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .toggle .line2 {
-        opacity: 0;
-    }
-
-    .toggle .line3 {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-
-    .nav-links ul {
-        margin: 0;
-    }
-
-    .nav-links li {
-        opacity: 0;
-    }
-
-    .burger {
-        display: block;
-        cursor: pointer;
-        margin-right: 40px
-    }
-
-
-}
-
-@media screen and (min-width:669px) {
+@media only screen and (min-width: 500px) {
     h1 {
+        margin-left: 7%;
         margin-top: 11%;
     }
-}
+
+
+    @media only screen and (min-width: 800px) {
+        .minimindful {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 980px;
+        }
+
+        form {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            grid-template-areas:
+                "name      email"
+                "subject  subject"
+                "message  message"
+                ".        submit";
+
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        .browser-links {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+            list-style: none;
+            position: fixed;
+            right: 0;
+            height: 92vh;
+            top: 8vh;
+            background-color: var(--menu);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            transition: transform 0.5s ease-in;
+            margin: 0;
+
+
+
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-size: 22px;
+            transition: color 0.2s, font-size 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color);
+            font-size: 25px;
+        }
+
+
+        .burger {
+            display: none;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 2px;
+            background-color: #fff;
+            margin: 5px;
+            transition: all 0.35s ease;
+        }
+
+        .nav-links {
+
+            transform: translateX(100%);
+        }
+
+
+
+        .nav-active {
+            transform: translateX(0%);
+        }
+
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        .toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .toggle .line2 {
+            opacity: 0;
+        }
+
+        .toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .nav-links ul {
+            margin: 0;
+        }
+
+        .nav-links li:nth-child(4) {
+            padding-bottom: 50%;
+        }
+
+        .burger {
+            display: block;
+            cursor: pointer;
+            margin-right: 40px
+        }
+
+
+    }
+
+
+
+    /* Tansition */
+
+
+    html.transition,
+    html.transition *,
+    html.transition *:before,
+    html.transition *:after {
+        transition: all 750ms !important;
+        transition-delay: 0 !important;

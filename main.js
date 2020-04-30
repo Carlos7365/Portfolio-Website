@@ -35,3 +35,43 @@ const navSlide = () => {
 
 }
 navSlide();
+
+// Dark - Light mode
+
+
+var checkbox = document.querySelector('.am');
+console.log(checkbox)
+
+
+
+// Transition animation
+let trans = () => {
+    document.documentElement.classList.add('transition');
+    window.setTimeout(() => {
+        document.documentElement.classList.remove('transition')
+    }, 1000)
+}
+
+// Functions to enable and disable Dark Mode
+const enableDarkMode = () => {
+    trans()
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('darkMode', 'enabled');
+}
+
+const disableDarkMode = () => {
+    trans()
+    document.documentElement.setAttribute('data-theme', 'light')
+    localStorage.setItem('darkMode', null);
+};
+
+
+// Toggle functionality
+checkbox.addEventListener('click', () => {
+        darkMode = localStorage.getItem("darkMode");
+        if (darkMode !== "enabled") {
+            enableDarkMode();
+        } else {
+        disableDarkMode();
+}})
+
