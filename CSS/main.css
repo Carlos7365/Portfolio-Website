@@ -10,10 +10,11 @@ html {
 :root {
     --color: #46BDDE;
     --grey: #7C7C7C;
+    --menu: #000000;
     --bg: #282828;
     --text: #fff;
-    /* --bg: #fff;
-    --text: #282828; */
+    /* --bg: #fff; */
+    /* --text: #282828; */
 }
 
 html[data-theme='dark'] {
@@ -26,6 +27,7 @@ body {
     justify-items: center;
     background-color: var(--bg);
     color: var(--text);
+    margin: 0;
 }
 
 h1 {
@@ -54,7 +56,8 @@ p {
     font-size: 1.1rem;
 }
 
-nav {
+
+/* nav {
     justify-self: end;
 }
 
@@ -66,8 +69,9 @@ nav ul {
     list-style: none;
     padding: 0;
     /* margin: 20px 40px; */
-}
+/* } */
 
+/* 
 nav li {
     padding-left: 20px;
 }
@@ -75,23 +79,42 @@ nav li {
 nav a {
     text-decoration: none;
     color: var(--text);
+} */
+
+a {
+    text-decoration: none;
+    color: var(--text);
 }
 
-button {
+
+button,
+.submit-button {
     width: 100px;
     height: 25px;
     border: 3px solid var(--color);
     margin-top: 40px;
     background-color: var(--bg);
     color: var(--text);
+    transition: background-color 0.4s, color 0.4s;
+    cursor: pointer;
 
 }
+
+button:hover,
+.submit-button:hover {
+    background-color: var(--text);
+    color: var(--bg);
+    /* border: 3px solid var(--color); */
+}
+
+
 
 .main-container {
     display: grid;
     justify-items: center;
 }
 
+/* Styling for hero  */
 span.am {
     height: 79px;
     width: 105.767px;
@@ -104,6 +127,7 @@ span.am {
     display: inline-block;
     position: relative;
     height: 82px;
+    z-index: 98;
 }
 
 span.am-text {
@@ -124,6 +148,8 @@ span.carlos {
     right: 3px;
 }
 
+/* Styling for hero subsection */
+
 .social-container {
     display: flex;
     justify-content: center;
@@ -136,10 +162,18 @@ span.carlos {
     width: 140px;
 }
 
-.git,
-.linked {
+/* Icons styling */
+.icon {
     font-size: 28px;
+    cursor: pointer;
+    transition: color 0.2s, font-size 0.2s;
 }
+
+.icon:hover {
+    font-size: 32px;
+    color: var(--color);
+}
+
 
 .tech {
     text-align: center;
@@ -151,6 +185,7 @@ span.carlos {
     text-align: center;
 }
 
+/* Underline for section titles */
 .underline {
     text-align: center;
     font-size: 3em;
@@ -159,18 +194,27 @@ span.carlos {
     color: var(--text);
 }
 
+/* About */
+
+.about {
+    width: 100%
+}
+
+/* Portfolio sections */
 .portfolio h3 {
-    margin: 0 5%;
+
     font-size: 1.3rem;
 }
 
 .minimindful {
     display: grid;
     grid-gap: 70px;
+    margin: 0 5%
 }
 
 .minimindful p {
-    margin-top: 30px;
+    margin: 30px 0 0 0;
+
 }
 
 .mini-image {
@@ -191,16 +235,274 @@ span.carlos {
     justify-content: space-around;
 }
 
+/* Styling for contact section */
+
 .contact {
+    width: 100%
+}
+
+.contact-form {
+    display: grid;
+    justify-items: center;
+}
+
+form {
+    width: 70%;
+    max-width: 600px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+        "name"
+        "email"
+        "subject"
+        "message"
+        "submit";
+}
+
+#name {
+    grid-area: name;
+}
+
+#email {
+    grid-area: email;
+}
+
+#subject {
+    grid-area: subject;
+}
+
+#message {
+    grid-area: message;
+}
+
+.submit-button {
+    grid-area: submit;
+    margin-top: 0;
+    justify-self: end;
+}
+
+.form-inputs {
+    height: 30px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.text-area {
+    height: 200px;
+    padding-top: 2px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin-top: 60px;
+}
+
+footer {
+    width: 100vw;
     margin-top: 100px;
+    background-color: black;
+
+}
+
+footer p {
+    font-size: 0.9rem;
+    text-align: right;
+    color: var(--text);
 }
 
 
+
+
+
+
+/* nav bar ///////////////////////////////////////////////////// */
+body {
+    overflow-x: hidden;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+
+}
+
+.browser-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 8vh;
+    background-color: var(--menu);
+    /* padding-right: 40px; */
+    width: 100%;
+    opacity: 0.8;
+}
+
+.logo {
+    color: rgb(235, 231, 231);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.browser-links {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    list-style: none;
+    /* padding-right: 40px; */
+}
+
+.browser-links a {
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.browser-links li {
+    padding-right: 5%;
+}
+
+.nav-links {
+    display: none;
+    /* display: flex;
+    justify-content: space-around;
+    width: 40%;
+    list-style: none; */
+}
+
+
+
+/* Media Queries */
 @media only screen and (min-width: 800px) {
     .minimindful {
         display: grid;
         grid-template-columns: 1fr 1fr;
         max-width: 980px;
+    }
 
+    form {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-areas:
+            "name      email"
+            "subject  subject"
+            "message  message"
+            ".        submit";
+
+    }
+}
+
+@media screen and (max-width:768px) {
+    .browser-links {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        list-style: none;
+        position: fixed;
+        /* position: absolute; */
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: var(--menu);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transition: transform 0.5s ease-in;
+        margin: 0;
+        opacity: 0.8;
+
+    }
+
+    .nav-links a {
+        color: var(--text);
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-size: 22px;
+        transition: color 0.2s, font-size 0.2s;
+    }
+
+    .nav-links a:hover {
+        color: var(--color);
+        font-size: 25px;
+    }
+
+
+    .burger {
+        display: none;
+    }
+
+    .burger div {
+        width: 25px;
+        height: 2px;
+        background-color: var(--text);
+        margin: 5px;
+        transition: all 0.35s ease;
+    }
+
+    .nav-links {
+
+        transform: translateX(100%);
+    }
+
+
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .nav-links ul {
+        margin: 0;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+        cursor: pointer;
+        margin-right: 40px
+    }
+
+
+}
+
+@media screen and (min-width:669px) {
+    h1 {
+        margin-top: 11%;
     }
 }
