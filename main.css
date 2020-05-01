@@ -333,7 +333,6 @@ form {
         "email"
         "subject"
         "message"
-        "recaptcha"
         "submit";
 }
 
@@ -353,9 +352,7 @@ form {
     grid-area: message;
 }
 
-.recaptcha {
-    grid-area: recaptcha;
-}
+
 
 .submit-button {
     grid-area: submit;
