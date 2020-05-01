@@ -1,4 +1,4 @@
-
+// Responsive Nav bar
 const navSlide = () => {
     const burger = document.querySelector(".burger");
     const nav = document.querySelector(".nav-links");
@@ -12,7 +12,7 @@ const navSlide = () => {
             if (link.style.animation) {
                 link.style.animation = ''
             } else{
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.2}s`
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.15}s`
             }
         })
         //burger animation
@@ -26,7 +26,7 @@ const navSlide = () => {
             if (link.style.animation) {
                 link.style.animation = ''
             } else{
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.2}s`
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.15}s`
             }
         })
         //burger animation
@@ -36,11 +36,12 @@ const navSlide = () => {
 }
 navSlide();
 
+
 // Dark - Light mode
 
 
 var checkbox = document.querySelector('.am');
-console.log(checkbox)
+
 
 
 
@@ -73,5 +74,34 @@ checkbox.addEventListener('click', () => {
             enableDarkMode();
         } else {
         disableDarkMode();
-}})
+    }
+    });
 
+
+
+// Fade in on scroll
+$(document).ready(function () {
+
+    /* Every time the window is scrolled ... */
+    $(window).scroll(function () {
+
+        /* Check the location of each desired element */
+        $('.hideme').each(function (i) {
+
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            /* If the object is completely visible in the window, fade it it */
+            if (bottom_of_window > bottom_of_object) {
+
+                $(this).animate({
+                    'opacity': '1'
+                }, 800);
+
+            }
+
+        });
+
+    });
+
+});

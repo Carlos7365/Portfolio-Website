@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cd35374dd3.js" crossorigin="anonymous"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Montserrat:ital,wght@1,600&family=VT323&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&family=Roboto:ital,wght@0,400;1,500&display=swap"
         rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <title>Document</title>
+    <title>Carlos Sanchez</title>
+
 </head>
 
 <body>
@@ -47,20 +48,18 @@
 
         <section class="hero">
             <div class="tittle">
-                <h1>Hi<br>
+                <h1><span class="hire">H</span><span class="hire">i</span><br>
 
                     I
                     <button class="am"><span class="am-text">am</span>
                         <spam class="arrow"> <i class="fas fa-retweet"></i></spam>
                     </button>
 
-
-
                     <br>
 
                     <span class="carlos">Carlos</span>,<br>
-                    Front-End
-                    Developer</h1>
+                    F<span class="hire">r</span>ont-end
+                    develop<span class="hire">e</span>r</h1>
             </div>
             <div class="social-container">
                 <div class="social">
@@ -72,12 +71,12 @@
             <div class="tech">
                 <p>HTML5 | CSS3 | JavaScript</p>
             </div>
-            <div class="intro">
-                <p>A self taught Front End Developer. I
-                    like to code things from scratch, and
-                    enjoy bringing ideas to life in the
-                    browser.
-                    <br>Also, when I was a kid, I had a pet monkey called Pepe.</p>
+            <div class="intro hideme">
+                <p>I am a self-taught front-end developer with a passion for creating beautifully simple code from
+                    scratch, and I love what I do. <br>Whatever the challenge, I relish finding a way to bring ideas
+                    to
+                    life.
+                </p>
             </div>
         </section>
         <section class="about" id="about">
@@ -85,14 +84,16 @@
             <div class="underline">
                 <i class="far fa-window-minimize under-title"></i>
             </div>
-            <p>
-                r erat massa sed lacus. Mauris lobortis orci ac
-                sem tincidunt, ut cursus ante congue. Proin sagittis<br>
+            <p class="hideme">
+                I have always had an interest in computers, and discovered my passion for coding two years ago, when I
+                wholeheartedly dedicated myself to learning it.<br> I love every minute I spend learning ways to solve
+                problems and become captivated by the detail. <br>I can't wait to share my uninhibited drive and work
+                ethic
+                to become invaluable to a company I believe in!<br> <br>
 
-                malesuada volutpat. Quisque mattis lacus in congue interdum. Curabitur quis elementum purus. Ut nec
-                lorem est.<br><br>
-                r erat massa sed lacus. Mauris lobortis orci ac
-                sem tincidunt, ut cursus ante congue. Proin sagittis fdsfjiefjeoijfoiewj</p>
+                When I'm not coding, I'm a dog trainer, lockdown skipping enthusiast, and chef fuelled by coffee from my
+                Colombian roots which brings back fond memories of my pet monkey Pepe.
+            </p>
         </section>
         <section class="portfolio" id="portfolio">
             <h2>Portfolio</h2>
@@ -100,23 +101,8 @@
                 <i class="far fa-window-minimize under-title"></i>
             </div>
             <div class="minimindful">
-                <div class="mini-text">
-                    <h3>Mini Mindful Children's Yoga</h3>
-                    <p>Project for a children’s Yoga Class. Used HTML CSS JavaScript And jQuewery.
-
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin interdum, odio at tincidunt
-                        congue,
-                        ante
-                        velit ornare orci, ut tempo
-
-                        r erat massa sed lacus. Mauris lobortis orci ac sem tincidunt, ut cursus ante congue. Proin
-                        sagittis
-                        malesuada volutpat. Quisque mattis lacus in congue interdum. Curabitur quis elementum purus. Ut
-                        nec
-                        lorem est. </p>
-                </div>
                 <div class="mini-image">
-                    <img class="mini-img" src="assets/Images/Portfolio340.png"
+                    <img class="mini-img hideme" src="assets/Images/iphone-x-mini-cut.png"
                         alt="Image of Mini Mindful Children's Yoga Website">
                     <div class="buttons">
                         <button onclick="window.location.href = 'https:/minimindfulyoga.netlify.app/';">Visit</button>
@@ -124,6 +110,20 @@
 
                     </div>
                 </div>
+                <div class="mini-text hideme">
+                    <h3>Mini Mindful Children's Yoga</h3>
+                    <p>Project for a children’s Yoga Class.<br><br>
+
+                        <span class="bold">Design:</span> Adobe XD <br>
+                        <span class="bold">Code Editor:</span> VS Code <br>
+                        <span class="bold">Technologies used:</span> HTML, CSS, JavaScript And jQuery. <br>
+                        <span class="bold">Version Control:</span> GitHub <br>
+                        <span class="bold">API's:</span> Google Maps
+
+
+                    </p>
+                </div>
+
             </div>
         </section>
         <section class="contact" id="contact">
@@ -132,22 +132,19 @@
                 <i class="far fa-window-minimize under-title"></i>
             </div>
             <div class="contact-form">
-                <!-- <form action="">
-                    <label for="name">Name</label>
-                    <label for="email">Email</label>
 
-                </form> -->
                 <form action=" POST" data-netlify="true">
 
 
                     <input type="text" id="name" name="name" placeholder="Name" required class="form-inputs">
                     <input type="text" id="email" name="email" placeholder="Email" required class="form-inputs">
                     <input type="text" id="subject" name="subject" placeholder="Subject" required class="form-inputs">
+
                     <textarea id="message" name="message" placeholder="Message" required
                         class="form-inputs text-area"></textarea>
-                    <!-- <div class="field">
+                    <div class="recaptcha">
                         <div data-netlify-recaptcha="true"> </div>
-                    </div> -->
+                    </div>
                     <input type="submit" value="Submit" class="submit-button">
 
                 </form>
@@ -168,6 +165,8 @@
         <p>Designed by Carlos Sanchez</p>
     </footer>
     <script src="main.js"></script>
+
+
 </body>
 
 </html>

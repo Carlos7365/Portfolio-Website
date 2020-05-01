@@ -6,6 +6,12 @@ html {
     width: 100vw;
 }
 
+/* spelling hire on H1 */
+
+/* .hire {
+    color: var(--color);
+} */
+
 
 :root {
     --color: #46BDDE;
@@ -50,6 +56,8 @@ h2 {
     font-size: 3rem;
     margin-top: 150px;
     margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 h3 {
@@ -60,6 +68,8 @@ p {
     margin: 0 5%;
     line-height: 1.8rem;
     font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.5px;
 }
 
 
@@ -111,6 +121,70 @@ button.am {
     z-index: 98;
     margin-top: 0;
     outline: none;
+}
+
+
+button.am {
+
+    animation: fadein 3s;
+    -moz-animation: fadein 3s;
+    /* Firefox */
+    -webkit-animation: fadein 3s;
+    /* Safari and Chrome */
+    -o-animation: fadein 3s;
+    /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+
+    /* Firefox */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+
+    /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+
+    /* Opera */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+button.am:hover {
+    background-color: var(--color);
+    border: 3px solid var(--text);
+
 }
 
 span.am-text {
@@ -167,6 +241,7 @@ span.carlos {
 
 .intro p {
     text-align: center;
+    font-size: 1rem;
 }
 
 /* Underline for section titles */
@@ -187,18 +262,30 @@ span.carlos {
 /* Portfolio sections */
 .portfolio h3 {
 
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    margin-top: 0;
+
 }
 
 .minimindful {
     display: grid;
     grid-gap: 70px;
-    margin: 0 5%
+    margin: 14% 5% 0 5%;
+}
+
+.minimindful h3,
+.minimindful p {
+    text-align: left;
 }
 
 .minimindful p {
     margin: 30px 0 0 0;
 
+}
+
+span.bold {
+    font-weight: bolder;
+    font-size: 1.3rem;
 }
 
 .mini-image {
@@ -209,7 +296,11 @@ span.carlos {
 }
 
 .minimindful img {
-    width: 300px;
+    width: 220px;
+}
+
+.mini-text p {
+    line-height: 2.1rem;
 }
 
 .buttons {
@@ -218,6 +309,7 @@ span.carlos {
     display: flex;
     justify-content: space-around;
 }
+
 
 /* Styling for contact section */
 
@@ -240,6 +332,7 @@ form {
         "email"
         "subject"
         "message"
+        "recaptcha"
         "submit";
 }
 
@@ -257,6 +350,10 @@ form {
 
 #message {
     grid-area: message;
+}
+
+.recaptcha {
+    grid-area: recaptcha;
 }
 
 .submit-button {
@@ -301,7 +398,7 @@ footer p {
 
 
 
-/* nav bar ///////////////////////////////////////////////////// */
+/* nav bar */
 body {
     overflow-x: hidden;
 }
@@ -364,141 +461,147 @@ nav {
         margin-top: 11%;
     }
 
-}
 
-@media only screen and (min-width: 800px) {
-    .minimindful {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        max-width: 980px;
+    @media only screen and (min-width: 800px) {
+        .minimindful {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 980px;
+        }
+
+        form {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            grid-template-areas:
+                "name      email"
+                "subject  subject"
+                "message  message"
+                ".        submit";
+
+        }
     }
 
-    form {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    @media screen and (max-width:768px) {
+        .browser-links {
+            display: none;
+        }
 
-        grid-template-areas:
-            "name      email"
-            "subject  subject"
-            "message  message"
-            ".        submit";
-
-    }
-}
-
-@media screen and (max-width:768px) {
-    .browser-links {
-        display: none;
-    }
-
-    .nav-links {
-        display: flex;
-        justify-content: space-around;
-        padding: 0;
-        list-style: none;
-        position: fixed;
-        right: 0;
-        height: 92vh;
-        top: 8vh;
-        background-color: var(--menu);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 50%;
-        transition: transform 0.5s ease-in;
-        margin: 0;
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+            list-style: none;
+            position: fixed;
+            right: 0;
+            height: 92vh;
+            top: 8vh;
+            background-color: var(--menu);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            transition: transform 0.5s ease-in;
+            margin: 0;
 
 
 
-    }
+        }
 
-    .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        letter-spacing: 3px;
-        font-size: 22px;
-        transition: color 0.2s, font-size 0.2s;
-    }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-size: 22px;
+            transition: color 0.2s, font-size 0.2s;
+        }
 
-    .nav-links a:hover {
-        color: var(--color);
-        font-size: 25px;
-    }
-
-
-    .burger {
-        display: none;
-    }
-
-    .burger div {
-        width: 25px;
-        height: 2px;
-        background-color: #fff;
-        margin: 5px;
-        transition: all 0.35s ease;
-    }
-
-    .nav-links {
-
-        transform: translateX(100%);
-    }
+        .nav-links a:hover {
+            color: var(--color);
+            font-size: 25px;
+        }
 
 
+        .burger {
+            display: none;
+        }
 
-    .nav-active {
-        transform: translateX(0%);
-    }
+        .burger div {
+            width: 25px;
+            height: 2px;
+            background-color: #fff;
+            margin: 5px;
+            transition: all 0.35s ease;
+        }
 
-    @keyframes navLinkFade {
-        from {
+        .nav-links {
+
+            transform: translateX(100%);
+        }
+
+
+
+        .nav-active {
+            transform: translateX(0%);
+        }
+
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        .toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .toggle .line2 {
             opacity: 0;
-            transform: translateX(50px);
         }
 
-        to {
-            opacity: 1;
-            transform: translateX(0px);
+        .toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
         }
-    }
 
-    .toggle .line1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
+        .nav-links ul {
+            margin: 0;
+        }
 
-    .toggle .line2 {
-        opacity: 0;
-    }
+        .nav-links li:nth-child(4) {
+            padding-bottom: 50%;
+        }
 
-    .toggle .line3 {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
+        .burger {
+            display: block;
+            cursor: pointer;
+            margin-right: 40px
+        }
 
-    .nav-links ul {
-        margin: 0;
-    }
 
-    .nav-links li:nth-child(4) {
-        padding-bottom: 50%;
-    }
-
-    .burger {
-        display: block;
-        cursor: pointer;
-        margin-right: 40px
     }
 
 
+
+    /* Tansition */
+
+
+    html.transition,
+    html.transition *,
+    html.transition *:before,
+    html.transition *:after {
+        transition: all 750ms !important;
+        transition-delay: 0 !important;
+    }
 }
 
 
-
-/* Tansition */
-
-
-html.transition,
-html.transition *,
-html.transition *:before,
-html.transition *:after {
-    transition: all 750ms !important;
-    transition-delay: 0 !important;
+.hideme {
+    opacity: 0;
+}
