@@ -96,7 +96,7 @@ $(document).ready(function () {
 
                 $(this).animate({
                     'opacity': '1'
-                }, 800);
+                }, 500);
 
             }
 
