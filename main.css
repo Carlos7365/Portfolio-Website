@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
 html {
@@ -90,8 +90,8 @@ a {
 
 button,
 .submit-button {
-    width: 135px;
-    height: 35px;
+    width: 120px;
+    height: 30px;
     border: 3px solid var(--color);
     margin-top: 80px;
     background-color: var(--bg);
@@ -123,7 +123,7 @@ button:hover,
 .hero {}
 
 button.am {
-    height: 79px;
+    height: 80px;
     width: 118px;
     background-color: var(--text);
     color: var(--bg);
@@ -136,6 +136,8 @@ button.am {
     z-index: 98;
     margin-top: 0;
     outline: none;
+    margin-bottom: 12px;
+    margin-left: 5px;
 }
 
 
@@ -285,6 +287,10 @@ span.carlos {
 }
 
 /* Portfolio sections */
+.portfolio {
+    width: 100%;
+}
+
 .portfolio h3 {
 
     font-size: 1.4rem;
@@ -292,17 +298,40 @@ span.carlos {
 
 }
 
-.minimindful {
+.portfolio-grid {
+
     display: grid;
-    grid-gap: 50px;
-    margin: 14% 5% 0 5%;
+    margin: 150px 8% 0 8%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 320px repeat(3, 500px);
+    grid-template-areas:
+        "meats-img"
+        "meats-info"
+        "mini-img"
+        "mini-info";
 }
 
-.minimindful h3,
-.minimindful p {
-    text-align: left;
-    margin-left: 8%;
+.meatsnbuns-image {
+    grid-area: meats-img;
 }
+
+.meats-info-links {
+    grid-area: meats-info;
+}
+
+.mini-image {
+    grid-area: mini-img;
+}
+
+.mini-info-links {
+    grid-area: mini-info;
+}
+
+.meats-img img {
+    width: 100%;
+    max-width: 440px;
+}
+
 
 
 
@@ -318,8 +347,9 @@ span.bold {
 
 }
 
-.minimindful img {
-    width: 340px;
+.mini-image img {
+    width: 100%;
+    max-width: 220px;
 }
 
 .info-links {
@@ -332,10 +362,10 @@ span.bold {
 }
 
 .buttons {
-    max-width: 400px;
+
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .buttons button:nth-child(1) {
@@ -498,11 +528,7 @@ nav {
 }
 
 @media only screen and (min-width: 800px) {
-    .minimindful {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        max-width: 980px;
-    }
+
 
     form {
         width: 100%;
@@ -516,6 +542,7 @@ nav {
             ".        submit";
 
     }
+
 }
 
 @media screen and (max-width:768px) {
@@ -621,6 +648,34 @@ nav {
 
 
 }
+
+@media screen and (min-width: 992px) {
+    .portfolio-grid {
+        /* display: grid; */
+
+        grid-gap: 80px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 80px auto;
+        /* max-width: 980px; */
+        grid-template-areas:
+            "meats-img meats-info"
+            "......... ........."
+            "mini-img mini-info";
+    }
+
+    .meatsnbuns-image {
+        justify-self: center;
+        align-self: center;
+    }
+
+    .mini-text h3,
+    .mini-text p {
+        text-align: left;
+        margin-left: 8%;
+    }
+}
+
+
 
 
 

@@ -10,43 +10,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&family=Roboto:ital,wght@0,400;1,500&display=swap"
         rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
     <title>Carlos Sanchez</title>
-    <!-- <script>
-        var width = Math.max(980, innerWidth),
-            height = Math.max(3000, innerHeight);
 
-        var i = 0;
-
-        var svg = d3.select("body").append("svg")
-            .attr("width", width)
-            .attr("height", height);
-
-        svg.append("rect")
-            .attr("width", width)
-            .attr("height", height)
-            .on("ontouchstart" in document ? "touchmove" : "mousemove", particle);
-
-        function particle() {
-            var m = d3.mouse(this);
-
-            svg.insert("circle", "rect")
-                .attr("cx", m[0])
-                .attr("cy", m[1])
-                .attr("r", 1e-6)
-                .style("stroke", d3.hsl((i = (i + 1) % 360), 1, .5))
-                .style("stroke-opacity", 1)
-                .transition()
-                .duration(2000)
-                .ease(Math.sqrt)
-                .attr("r", 100)
-                .style("stroke-opacity", 1e-6)
-                .remove();
-
-            d3.event.preventDefault();
-        }
-        console.log('help');
-    </script> -->
 </head>
 
 <body>
@@ -97,8 +62,8 @@
             </div>
             <div class="social-container">
                 <div class="social">
-                    <a href="https://github.com/Carlos7365"> <i class="fab fa-github git icon"></i></a>
-                    <a href="https://www.linkedin.com/in/carlos-sanchez-62b318133/"><i
+                    <a href="https://github.com/Carlos7365" target="_blank"> <i class="fab fa-github git icon"></i></a>
+                    <a href="https://www.linkedin.com/in/carlos-sanchez-62b318133/" target="_blank"><i
                             class="fab fa-linkedin linked icon"></i></a>
                 </div>
             </div>
@@ -134,15 +99,45 @@
             <div class="underline">
                 <i class="far fa-window-minimize under-title"></i>
             </div>
-            <div class="minimindful">
+            <div class="portfolio-grid">
+
+                <div class="meatsnbuns-image">
+                    <div class="meats-img">
+                        <img src="assets/Images/Laptop-Tablet-Mob.svg" alt="Laptop mobile and phone mockup"
+                            class="meats-img hideme">
+                    </div>
+                </div>
+
+                <div class="meats-info-links">
+                    <div class="meats-text hideme">
+                        <h3>Meats 'n' Buns</h3>
+                        <p>Responsive website for a restaurant.<br><br>
+
+                            <span class="bold">Design:</span> Adobe XD <br>
+                            <span class="bold">Code Editor:</span> VS Code <br>
+                            <span class="bold">Technologies used:</span> HTML, CSS, JavaScript And jQuery. <br>
+                            <span class="bold">Version Control:</span> GitHub <br>
+
+
+                        </p>
+                        <div class="buttons">
+                            <button onclick="window.open('https://meatsnbuns.netlify.app/','_blank')">Visit</button>
+                            <button
+                                onclick="window.open('https://github.com/Carlos7365/Meats-n-Buns','_blank')">GitHub</button>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="mini-image">
-                    <img class="mini-img hideme" src="assets/Images/mini-w-mob1.png"
+                    <img class="mini-img hideme" src="assets/Images/mini-w-mob.png"
                         alt="Image of Mini Mindful Children's Yoga Website">
 
                 </div>
-                <div class="info-links">
+
+                <div class="mini-info-links">
                     <div class="mini-text hideme">
-                        <h3>Mini Mindful Children's Yoga</h3>
+                        <h3>Mini Mindful Children's Yoga.</h3>
                         <p>Project for a children’s Yoga Instructor.<br><br>
 
                             <span class="bold">Design:</span> Adobe XD <br>
@@ -156,10 +151,14 @@
                     </div>
                     <div class="buttons">
                         <button onclick="window.open('https://minimindfulyoga.netlify.app/','_blank')">Visit</button>
-                        <button>GitHub</button>
+                        <button
+                            onclick="window.open('https://github.com/Carlos7365/mini-mindful-yoga','_blank')">GitHub</button>
+
 
                     </div>
                 </div>
+
+
             </div>
         </section>
         <section class="contact" id="contact">
