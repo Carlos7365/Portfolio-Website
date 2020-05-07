@@ -11,11 +11,6 @@ html {
     overflow: auto;
 }
 
-/* spelling hire on H1 */
-
-/* .hire {
-    color: var(--color);
-} */
 
 
 :root {
@@ -25,9 +20,6 @@ html {
     --menu: #000000;
     --bg: #282828;
     --text: #fff;
-    /* --bg: #fff; */
-    /* --text: #282828; */
-    /* --menu: #fff; */
 }
 
 
@@ -124,7 +116,7 @@ button:hover,
 
 button.am {
     height: 80px;
-    width: 118px;
+    width: 110px;
     background-color: var(--text);
     color: var(--bg);
     padding-right: 12px;
@@ -303,7 +295,7 @@ span.carlos {
     display: grid;
     margin: 150px 8% 0 8%;
     grid-template-columns: 1fr;
-    grid-template-rows: 320px repeat(3, 500px);
+    grid-template-rows: 320px 500px 367px 500px;
     grid-template-areas:
         "meats-img"
         "meats-info"
@@ -534,7 +526,6 @@ nav {
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
-
         grid-template-areas:
             "name      email"
             "subject  subject"
@@ -651,12 +642,9 @@ nav {
 
 @media screen and (min-width: 992px) {
     .portfolio-grid {
-        /* display: grid; */
-
         grid-gap: 80px;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto 80px auto;
-        /* max-width: 980px; */
         grid-template-areas:
             "meats-img meats-info"
             "......... ........."
