@@ -657,7 +657,9 @@ nav {
     }
 
     .mini-text h3,
-    .mini-text p {
+    .mini-text p,
+    .meats-info-links h3,
+    .meats-info-links p {
         text-align: left;
         margin-left: 8%;
     }
